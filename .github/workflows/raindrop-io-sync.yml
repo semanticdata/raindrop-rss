@@ -1,0 +1,20 @@
+name: Raindrop.io Sync
+
+on:
+  workflow_dispatch:
+  # schedule:
+  # - cron: 0 0 * * * # runs daily at midnight
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Run Raindrop.io Sync Script
+        env:
+          RAINDROP_IO_API_TOKEN: ${{ secrets.RAINDROP_IO_API_TOKEN }}
+          RSS_FEEDS: ${{ secrets.RSS_FEEDS }}
+        run: |
+          python raindrop-io-sync.py

@@ -1,0 +1,14 @@
+{
+  "name": "raindrop-rss-sync",
+  "version": "1.0.0",
+  "description": "Sync RSS feeds to Raindrop.io",
+  "main": "local_sync.js",
+  "scripts": {
+    "start": "node local_sync.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "dotenv": "^16.3.1",
+    "rss-parser": "^3.13.0"
+  }
+} 
